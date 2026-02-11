@@ -1,0 +1,58 @@
+---
+const {
+  name = "Juan Chaparro",
+  subtitle = "Hi, ich bin",
+  description = "Motivierter IT-Lernender mit Fokus auf Anwendungsentwicklung.",
+  image = "/JFoto.jpg",
+  id = "Startseite",
+} = Astro.props;
+---
+
+<section
+  id={id}
+  class="h-screen flex items-center justify-center relative overflow-hidden"
+>
+  <!-- Background -->
+  <div class="absolute inset-0 hero-background"></div>
+
+  <!-- Main content -->
+  <div class="text-center z-10 animate-fadeInUp pt-8">
+    <img
+      src={image}
+      alt="Profile"
+      class="w-[200px] h-[200px] rounded-full object-cover border-4 border-[#ff6b35]
+             shadow-[0_20px_60px_rgba(255,107,53,0.4)]
+             mt-2 mb-2 mx-auto animate-float"
+      loading="eager"
+    />
+
+    <div class="font-['Space_Mono'] text-[#ff6b35] text-base mt-4 tracking-[2px]">
+      {subtitle}
+    </div>
+
+    <h1
+      class="font-['Playfair_Display']
+             text-[clamp(2rem,8vw,7rem)]
+             font-black mb-4
+             bg-gradient-to-br from-[#ff6b35] to-[#fdc82f]
+             bg-clip-text text-transparent"
+    >
+      {name}
+    </h1>
+
+    <p class="text-xl text-[#49505e] max-w-[650px] mx-auto mb-12 mt-2">
+      {description}
+    </p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-6 left-1/2 -translate-x-1/2
+           flex flex-col items-center gap-2 animate-bounce"
+  >
+    <span class="font-['Space_Mono'] text-xs text-[#49505e] tracking-[2px]">
+      SCROLL
+    </span>
+    <div class="w-0.5 h-10 bg-gradient-to-b from-[#ff6b35] to-transparent"></div>
+  </div>
+</section>

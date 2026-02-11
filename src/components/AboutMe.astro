@@ -1,0 +1,280 @@
+<section class="min-h-screen flex items-center relative px-8 md:px-16 py-24 md:py-32 hero-background" id="AboutMe">
+
+    
+    <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 items-center">
+        
+        <!-- Content -->
+        <div class="z-10">
+            <span class="about-label mb-6">ÜBER MICH</span>
+            
+            <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold mb-8 leading-tight text-light">
+                Wer ich bin
+            </h2>
+            
+            <p class="text-lg text-gray mb-8 leading-relaxed">
+                Ich bin ein engagierter Entwickler mit Schwerpunkt auf moderner Webentwicklung.
+                Aktuell arbeite ich intensiv an eigenen Projekten und vertiefe kontinuierlich meine Kenntnisse im Frontend-Bereich.
+            </p>
+            
+            <p class="text-lg text-gray mb-8 leading-relaxed">
+                Dabei lege ich großen Wert auf sauberen, strukturierten Code sowie auf eine durchdachte und benutzerfreundliche Gestaltung.
+                Zuverlässigkeit, Lernbereitschaft und eine lösungsorientierte Arbeitsweise zeichnen mich besonders aus.
+            </p>
+            
+            <a href="#Projekte" class="cta-button">
+                <span>Meine Projekte ansehen →</span>
+            </a>
+        </div>
+
+        <!-- Enhanced Tech Card -->
+        <div class="relative z-10">
+          <div class="tech-card-enhanced">
+            
+            <!-- Tech Icons with Float Animation -->
+            <div class="tech-icons-container">
+              <div class="tech-icon-wrapper" style="animation-delay: 0s;">
+                <div class="tech-icon-glow glow-primary"></div>
+                <img src="/JavaScript.svg" alt="JavaScript" class="tech-icon-img">
+              </div>
+              <div class="tech-icon-wrapper" style="animation-delay: 0.1s;">
+                <div class="tech-icon-glow glow-secondary"></div>
+                <img src="/React.svg" alt="React" class="tech-icon-img">
+              </div>
+              <div class="tech-icon-wrapper" style="animation-delay: 0.2s;">
+                <div class="tech-icon-glow glow-accent"></div>
+                <img src="/Html.svg" alt="Html logo" class="tech-icon-img">
+              </div>
+              <div class="tech-icon-wrapper" style="animation-delay: 0.3s;">
+                <div class="tech-icon-glow glow-primary"></div>
+                <img src="/CSS3.svg" alt="CSS3 logo" class="tech-icon-img">
+              </div>
+            </div>
+
+            <!-- Animated Divider -->
+            <div class="tech-divider-animated">
+              <div class="tech-divider-shine"></div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="font-display text-[clamp(1.5rem,3vw,2rem)] font-bold mb-6 text-center tech-title-gradient">
+              Frontend Entwicklung
+            </h3>
+
+            <!-- Content -->
+            <div class="space-y-4">
+              <p class="text-gray leading-relaxed">
+                Mein Fokus liegt derzeit auf der Frontend-Entwicklung mit modernen Technologien wie JavaScript und React.
+                Ich entwickle strukturierte und wartbare Anwendungen mit einem klaren Blick für Performance und Nutzererlebnis.
+              </p>
+              <p class="text-gray leading-relaxed">
+                Langfristig plane ich, mein Wissen auch im Backend-Bereich sowie in angrenzenden Technologien weiter auszubauen.
+              </p>
+            </div>
+
+            <!-- Decorative corner accents -->
+            <div class="tech-corner-accent tech-corner-tl"></div>
+            <div class="tech-corner-accent tech-corner-br"></div>
+          </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+  /* Enhanced Tech Card  */
+  .tech-card-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, 
+      rgba(255, 107, 53, 0.08) 0%, 
+      rgba(247, 147, 30, 0.05) 50%,
+      rgba(253, 200, 47, 0.03) 100%);
+    border: 1px solid rgba(255, 107, 53, 0.25);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 10px 40px rgba(10, 9, 8, 0.3),
+      inset 0 1px 0 rgba(255, 107, 53, 0.1);
+  }
+
+  .tech-card-enhanced::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 107, 53, 0.1) 0%, 
+      rgba(253, 200, 47, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 24px;
+  }
+
+  .tech-card-enhanced:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 
+      0 20px 60px rgba(237, 91, 37, 0.2),
+      0 0 80px rgba(255, 107, 53, 0.15),
+      inset 0 1px 0 rgba(255, 107, 53, 0.2);
+  }
+
+  .tech-card-enhanced:hover::before {
+    opacity: 1;
+  }
+
+  /* Tech Icons Container */
+  .tech-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-icon-wrapper {
+    position: relative;
+    animation: techFloat 3.5s ease-in-out infinite;
+  }
+
+  .tech-icon-img {
+    width: 60px;
+    height: 60px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(10, 9, 8, 0.4));
+  }
+
+  .tech-icon-wrapper:hover .tech-icon-img {
+    transform: scale(1.2) rotate(8deg);
+  }
+
+  /* Icon Glows */
+  .tech-icon-glow {
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    filter: blur(25px);
+  }
+
+  .tech-icon-wrapper:hover .tech-icon-glow {
+    opacity: 0.7;
+  }
+
+  .glow-primary {
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.8) 0%, transparent 70%);
+  }
+
+  .glow-secondary {
+    background: radial-gradient(circle, rgba(247, 147, 30, 0.8) 0%, transparent 70%);
+  }
+
+  .glow-accent {
+    background: radial-gradient(circle, rgba(253, 200, 47, 0.8) 0%, transparent 70%);
+  }
+
+  /* Animated Divider */
+  .tech-divider-animated {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 107, 53, 0.4) 50%, 
+      transparent 100%);
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .tech-divider-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0,
+      rgb(219, 65, 38) 50%, 
+      transparent 100%);
+    animation: dividerShine 3s ease-in-out infinite;
+  }
+
+  /* Title Gradient  */
+  .tech-title-gradient {
+    background: linear-gradient(135deg, 
+      #f2f4f3 0%, 
+      #ff6b35 50%,
+      #fdc82f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  /* Corner Accents  */
+  .tech-corner-accent {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  .tech-corner-tl {
+    top: 0;
+    left: 0;
+    border-top: 2px solid #ff6b35;
+    border-left: 2px solid #ff6b35;
+    border-radius: 24px 0 0 0;
+    animation: cornerPulse 3s ease-in-out infinite;
+  }
+
+  .tech-corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid #fdc82f;
+    border-right: 2px solid #fdc82f;
+    border-radius: 0 0 24px 0;
+    animation: cornerPulse 3s ease-in-out infinite 1.5s;
+  }
+
+  /* Animations */
+ 
+
+  @keyframes dividerShine {
+    0% {
+      left: -100%;
+    }
+    50%, 100% {
+      left: 100%;
+    }
+  }
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tech-card-enhanced {
+      padding: 2rem 1.5rem;
+    }
+
+    .tech-icons-container {
+      gap: 1.25rem;
+    }
+
+    .tech-icon-img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .tech-corner-accent {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

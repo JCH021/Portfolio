@@ -1,0 +1,363 @@
+---
+const projects = [
+  {
+    id: 1,
+    number: "01",
+    title: "SpotXV",
+    subtitle: "Spotify Clone",
+    description: "Funktionaler Spotify UI Clone als Frontend-Challenge mit einer Screenshot-basierten Nachbildung der Spotify-Oberfläche sowie Musikwiedergabe, funktionierenden Playlists und responsivem Design.",
+    screenshot: "/public/Screenshots/Spotxv.png",
+    technologies: [
+      { name: "JavaScript", icon: "/public/JavaScript.svg" },
+      { name: "React", icon: "/public/React.svg" },
+      { name: "Astro", icon: "/public/astro.svg" },
+      { name: "Tailwind", icon: "/public/tailwind.svg" }
+    ],
+    liveUrl: "https://www.spotxv.de/",
+    githubUrl: "https://github.com/JCH021/spotxv"
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Genes",
+    subtitle: "Foto-Galerie Plattform",
+    description: "Pinterest-ähnliche Bilderplattform mit API-Nutzung. Fokus auf Datenverarbeitung, dynamische Inhalte und responsives Frontend.",
+
+    screenshot: "/public/screenshots/Genes.png",
+    technologies: [
+      { name: "JavaScript", icon: "/public/JavaScript.svg" },
+      { name: "React", icon: "/public/React.svg" },
+      { name: "HTML", icon: "/public/Html.svg" },
+      { name: "CSS", icon: "/public/CSS3.svg" }
+    ],
+    liveUrl: "https://www.geness.de",
+    githubUrl: "https://github.com/JCH021/Genes"
+  }
+];
+---
+
+<!-- Projects Section -->
+<section class="px-8 md:px-16 py-16 hero-background" id="Projekte">
+  
+  <!-- Header -->
+  <div class="text-center max-w-[800px] mx-auto mb-24 fade-in">
+    <div class="font-mono text-[0.85rem] text-primary tracking-[3px] mb-4">PORTFOLIO</div>
+    <h2 class="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 text-light">
+      Ausgewählte Projekte
+    </h2>
+    <p class="text-lg text-gray leading-relaxed">
+      Eine Sammlung von Projekten, die meine Fähigkeiten in Webentwicklung, UI-Design und strukturiertem Code zeigen.
+    </p>
+  </div>
+
+  <!-- Projects Grid  -->
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    {projects.map((project, index) => (
+      <div 
+        class="project-card-enhanced fade-in"
+        style={`animation-delay: ${index * 0.15}s`}
+      >
+        <!-- Project Number -->
+        <div class="font-mono text-xs text-primary mb-4 relative z-10">{project.number}</div>
+        
+        <!-- Screenshot Container -->
+        <div class="project-screenshot-container">
+          <div class="project-screenshot-wrapper">
+            <img 
+              src={project.screenshot} 
+              alt={`Screenshot von ${project.title}`}
+              class="project-screenshot"
+            />
+            <div class="project-screenshot-overlay">
+              <div class="project-overlay-buttons">
+                <a 
+                  href={project.liveUrl}
+                  target="_blank" 
+                  class="project-overlay-link"
+                  aria-label={`${project.title} live ansehen`}
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                  </svg>
+                  Live Demo
+                </a>
+                <a 
+                  target="_blank" 
+                  href={project.githubUrl} 
+                  class="project-overlay-link"
+                  aria-label={`${project.title} GitHub`}
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                  </svg>
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-display text-3xl font-bold mb-2 relative z-10 text-light mt-6">
+          {project.title}
+        </h3>
+        
+        <!-- Subtitle -->
+        <p class="font-mono text-sm text-primary mb-4 tracking-wide relative z-10">
+          {project.subtitle}
+        </p>
+
+        <!-- Description -->
+        <p class="text-gray mb-6 leading-relaxed relative z-10">
+          {project.description}
+        </p>
+
+        <!-- Technologies -->
+        <div class="flex flex-wrap gap-3 mb-6 relative z-10">
+          {project.technologies.map((tech) => (
+            <div class="tech-icon-badge" title={tech.name}>
+              <img 
+                src={tech.icon} 
+                alt={tech.name}
+                class="tech-badge-icon"
+              />
+              <span class="tech-badge-name">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Project Link -->
+        <a href={project.liveUrl} class="project-link-main">
+          Projekt ansehen →
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <!-- CTA Final -->
+  <div class="text-center mt-20 fade-in">
+    <p class="text-gray mb-6 text-lg">
+      <p class="text-gray mb-6 text-lg">
+         Weitere Projekte, Experimente und Lernarbeiten rund um Webentwicklung finden Sie auf meinem GitHub.
+      </p>
+
+
+    </p>
+    <a href="https://github.com/JCH021" target="_blank" class="cta-button">
+      <span>GitHub besuchen →</span>
+    </a>
+  </div>
+
+</section>
+
+<style>
+  /* Project Card Enhanced */
+  .project-card-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, 
+      rgba(255, 107, 53, 0.08) 0%, 
+      rgba(247, 147, 30, 0.04) 100%);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .project-card-enhanced::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 107, 53, 0.15) 0%,
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .project-card-enhanced:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 
+      0 20px 60px rgba(255, 107, 53, 0.2),
+      0 0 80px rgba(255, 107, 53, 0.1);
+  }
+
+  .project-card-enhanced:hover::before {
+    opacity: 1;
+  }
+
+  /* Screenshot Container */
+  .project-screenshot-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-screenshot-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0a0908;
+    box-shadow: 
+      0 10px 30px rgba(10, 9, 8, 0.4),
+      0 0 0 1px rgba(255, 107, 53, 0.1) inset;
+  }
+
+  .project-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card-enhanced:hover .project-screenshot {
+    transform: scale(1.08);
+  }
+
+  /* Screenshot Overlay */
+  .project-screenshot-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 9, 8, 0.2) 0%,
+      rgba(10, 9, 8, 0.85) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card-enhanced:hover .project-screenshot-overlay {
+    opacity: 1;
+  }
+
+  .project-overlay-buttons {
+    display: flex;
+    gap: 1rem;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .project-card-enhanced:hover .project-overlay-buttons {
+    transform: translateY(0);
+  }
+
+  .project-overlay-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: rgba(255, 107, 53, 0.95);
+    color: #0a0908;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .project-overlay-link:hover {
+    background: #ff6b35;
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+  }
+
+  /* Tech Icon Badge */
+  .tech-icon-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.875rem;
+    background: rgba(255, 107, 53, 0.08);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .tech-icon-badge:hover {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .tech-badge-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 2px 4px rgba(10, 9, 8, 0.3));
+  }
+
+  .tech-badge-name {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #fdc82f;
+    font-weight: 500;
+  }
+
+  /* Project Link Main */
+  .project-link-main {
+    display: inline-flex;
+    align-items: center;
+    color: #ff6b35;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .project-link-main::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35, #fdc82f);
+    transition: width 0.3s ease;
+  }
+
+  .project-link-main:hover {
+    color: #f7931e;
+    transform: translateX(5px);
+  }
+
+  .project-link-main:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .project-card-enhanced {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .tech-icon-badge {
+      padding: 0.4rem 0.75rem;
+    }
+
+    .tech-badge-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tech-badge-name {
+      font-size: 0.7rem;
+    }
+  }
+</style>

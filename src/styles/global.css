@@ -1,0 +1,179 @@
+
+
+@import "tailwindcss";
+
+/* ===============================
+   Design Tokens (Tailwind v4)
+================================ */
+@theme {
+  /* Colors */
+  --color-primary: #ff6b35;
+  --color-secondary: #f7931e;
+  --color-accent: #fdc82f;
+  --color-dark: #0a0908;
+  --color-light: #f2f4f3;
+  --color-gray: #49505e;
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-mono: "Space Mono", monospace;
+  --font-sans: "Work Sans", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   COMPONENTS
+================================ */
+@layer components {
+  /* Navigation Links */
+  .nav-link {
+    @apply text-[#f2f4f3] no-underline text-sm font-normal
+           transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 w-0 h-0.5
+           bg-[#ff6b35] transition-all duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-[#ff6b35];
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    @apply inline-block px-10 py-4
+           bg-[#ff6b35] text-[#0a0908]
+           font-semibold no-underline
+           rounded-[50px]
+           transition-all duration-300
+           relative overflow-hidden;
+  }
+
+  .cta-button::before {
+    content: "";
+    @apply absolute inset-0 
+           bg-gradient-to-br from-[#f7931e] to-[#fdc82f]
+           opacity-0 transition-opacity duration-300;
+  }
+
+  .cta-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .cta-button span {
+    @apply relative z-10;
+  }
+
+  .cta-button:hover {
+    @apply -translate-y-0.5
+           shadow-[0_10px_30px_rgba(255,107,53,0.3)];
+  }
+
+  /* Year Background (gigante para storytelling) */
+  .year-background {
+    @apply font-display font-black absolute top-[10%] left-16 
+           opacity-5 z-0 leading-none pointer-events-none
+           text-[clamp(8rem,15vw,12rem)];
+  }
+
+  /* Visual Card (AboutMe) */
+  .visual-card {
+    @apply bg-gradient-to-br from-[rgba(255,107,53,0.1)] to-[rgba(253,200,47,0.05)]
+           border border-[rgba(255,107,53,0.2)]
+           rounded-[20px] p-12
+           backdrop-blur-[10px]
+           transition-transform duration-500
+           hover:-translate-y-2.5;
+  }
+
+  /* Tech Tag */
+  .tech-tag {
+    @apply bg-[rgba(255,107,53,0.1)]
+           border border-[rgba(255,107,53,0.3)]
+           px-4 py-2 rounded-[20px]
+           font-mono text-xs
+           text-[#fdc82f];
+  }
+
+  /* About Label */
+  .about-label {
+    @apply font-mono text-[0.85rem]
+           text-[#ff6b35]
+           tracking-[3px]
+           inline-block;
+  }
+}
+
+/* ===============================
+   UTILITIES (Hero + Animations)
+================================ */
+@layer utilities {
+  /* Hero background */
+  .hero-background {
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(9, 9, 9, 0.499),
+        transparent 60%
+      ),
+      linear-gradient(
+        180deg,
+        #0a0908 100%,
+        #1a1816 0%
+      );
+  }
+
+  /* Fade In Up */
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out both;
+  }
+
+  /* Floating image */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+/* ===============================
+   KEYFRAMES
+================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE ADJUSTMENTS
+================================ */
+@media (max-width: 968px) {
+  .year-background {
+    @apply text-[6rem] top-8 left-8;
+  }
+}
