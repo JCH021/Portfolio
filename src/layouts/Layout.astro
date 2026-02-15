@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Footer from "../components/Footer.astro";
 import Projekte from "../components/Projekte.astro";
+import Navigation from "../components/Navigation.astro";
 interface Props {
   title?: string;
 }
@@ -25,16 +26,7 @@ const { title = 'Portfolio_JCH' } = Astro.props;
 </head>
 <body class="bg-[#0a0908] text-[#f2f4f3] font-['Work_Sans'] overflow-x-hidden leading-relaxed">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 px-16 py-8 z-[1000] flex justify-between items-center bg-gradient-to-b from-[#0a0908]/95 to-transparent backdrop-blur-lg">
-        <div class="font-['Space_Mono'] font-bold text-xl bg-gradient-to-br from-[#ff6b35] to-[#fdc82f] bg-clip-text text-transparent">JCH.portfolio</div>
-        <ul class="flex gap-8 list-none">
-            <li><a href="#Startseite" class="nav-link">Startseite</a></li>
-			<li><a href="#AboutMe" class="nav-link">About me</a></li>
-            <li><a href="#Projekte" class="nav-link">Projekte</a></li>
-            <li><a href="#Kontakt" class="nav-link">Kontakt</a></li>
-        </ul>
-    </nav>
-
+    <Navigation />
     <Hero />
 	<AboutMe />
 	<Projekte />

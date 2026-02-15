@@ -1,46 +1,74 @@
-# Astro Starter Kit: Basics
+# 💼 Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is my personal developer portfolio built with Astro.  
+It showcases my projects, skills, and background as a Junior Frontend Developer specialized in JavaScript and React.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🚀 About Me
 
-Inside of your Astro project, you'll see the following folders and files:
+Hi! I'm a Junior Developer passionate about building modern, responsive, and user-friendly web applications.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+I mainly work with:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- JavaScript (ES6+)
+- React
+- HTML5
+- CSS3
+-Tailwind
+- Astro
+- Git & GitHub
 
-## 🧞 Commands
+I enjoy learning new technologies and continuously improving my coding skills by building real-world projects.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🛠️ Tech Stack
 
-## 👀 Want to learn more?
+This portfolio was built using:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Astro
+- JavaScript
+- CSS
+- Responsive Design principles
+
+---
+
+## 📂 Sections Included
+
+- 🏠 Home
+- 👨‍💻 About Me
+- 🧠 Skills
+- 📁 Projects
+- 📬 Contact
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+
+##▶️ Run Locally
+
+Start the development server:
+npm run dev
+
+##🏗️ Build for Production
+npm run build
+
+🎯 Purpose
+
+This portfolio serves as:
+
+- A showcase of my personal and professional projects.
+
+- A demonstration of my frontend development skills.
+
+- A central place to present my experience and contact information.
+
+📄 License
+
+This project is open for learning and inspiration purposes.
